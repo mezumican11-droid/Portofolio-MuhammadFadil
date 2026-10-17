@@ -1279,4 +1279,177 @@ section {
   @media (min-width: 501px) {
   .character-images {
     width: 480px;
-    heigh
+    heigh: 250px;
+    margin-left: 30px;
+  }
+  }
+/* CONTACT LAYOUT */
+#contact {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-title {
+  width: 100%;
+  text-align: center;
+  font-size: clamp(42px, 5vw, 70px);
+  line-height: 1;
+  margin-bottom: 30px;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.contact-title span {
+  color: #762eff;
+    }
+  
+ .contact-description {
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  color: #bbb;
+  font-size: 17px;
+  line-height: 1.6;
+  margin-top: -65px;
+  margin-bottom: 25px;
+}
+  
+  @media (max-width:500px) {
+
+  .contact-title.reveal.show {
+    transform: translateY(-100px);
+  }
+    
+ }
+  @media (min-width: 901px) {
+
+  .contact-title.reveal.show {
+    transform: translateY(-60px);
+  }
+
+  .contact-description {
+    transform: translateY(-50px);
+  }
+
+  }
+/* =========================
+   OPENING PAGE REVEAL
+========================= */
+
+/* SEMUA HOME TERSEMBUNYI SAAT OPENING */
+.hero .hero-copy,
+.hero .hero-logo,
+header {
+  opacity: 0;
+}
+
+/* MUNCUL SETELAH OPENING */
+body.page-ready .hero-copy,
+body.page-ready .hero-logo,
+body.page-ready header {
+  animation: pageReveal 1.2s cubic-bezier(.22,1,.36,1) both;
+}
+
+body.page-ready .hero-copy {
+  animation-delay: .15s;
+}
+
+body.page-ready .hero-logo {
+  animation-delay: .3s;
+}
+
+@keyframes pageReveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+/* =========================
+   SPACE WARP PARTICLES
+========================= */
+
+.warp-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+.warp-particle {
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 5px rgba(255,255,255,.95),
+    0 0 12px rgba(255,255,255,.75),
+    0 0 22px rgba(255,255,255,.45);
+
+  transform-origin: center center;
+
+  will-change: transform;
+}
+.warp-particle.purple {
+  background: #9b4dff;
+
+  box-shadow:
+    0 0 3px rgba(155,77,255,.95),
+    0 0 7px rgba(155,77,255,.7),
+    0 0 14px rgba(155,77,255,.4);
+}
+
+.warp-particle.small {
+  width: 1px;
+  height: 1px;
+}
+
+.warp-particle.large {
+  width: 3px;
+  height: 3px;
+
+  box-shadow:
+    0 0 4px rgba(255,255,255,1),
+    0 0 9px rgba(255,255,255,.8),
+    0 0 16px rgba(255,255,255,.45);
+}
+.warp-point {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 12px;
+  height: 12px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 8px #ffffff,
+    0 0 20px rgba(155,77,255,.9),
+    0 0 45px rgba(118,46,255,.7);
+
+  opacity: 1;
+
+  z-index: 5;
+
+  pointer-events: none;
+   }
